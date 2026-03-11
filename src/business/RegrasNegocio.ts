@@ -5,16 +5,17 @@ export class RegrasDaEntidade{
     static listaEntidadesEstatica : Entidade[] = [];
     static contadorId = 1;
 
-    static adicionarEntidade(nomeAdicionado : string) : Entidade[] {
+    static adicionarEntidade(nomeAdicionado : string, descricaoAdicionada : string) : Entidade[] {
         this.validarNome(nomeAdicionado, this.listaEntidadesEstatica);
 
         const novaEntidade : Entidade = {
             id: this.contadorId,
             nome: nomeAdicionado,
-            descricao: "Descrição Teste",
+            descricao: descricaoAdicionada,
         }
 
         this.listaEntidadesEstatica.push(novaEntidade);
+        this.contadorId++;
         return this.listaEntidadesEstatica;
     }
 
